@@ -1,0 +1,91 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLHakkimizda>
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/Restoran_Laout.cshtml";
+}
+
+<body>
+    <div id="body_bg">
+        
+        <div class="primary-container-group">
+            <!-- Background -->
+            <div class="primary-container-background">
+                <div class="primary-container"></div>
+                <div class="clearfix"></div>
+            </div>
+            <!--End Background -->
+            <div class="primary-container">
+                
+                <div class="container">
+                    <!-- === END HEADER === -->
+                    <!-- === BEGIN CONTENT === -->
+                    @foreach (var x in Model)
+                    {
+                        <div class="row margin-vert-30">
+                            <div class="col-md-12">
+                                <h2>@x.Baslik</h2>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>@x.KafeAciklama</p>
+                                        <p>
+                                            @x.DugunAciklama
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Carousel -->
+                                        <div id="carousel-example-1" class="carousel slide" data-ride="carousel">
+                                            <!-- Indicators -->
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carousel-example-1" data-slide-to="1"></li>
+                                                <li data-target="#carousel-example-1" data-slide-to="2"></li>
+                                            </ol>
+                                            <!-- Wrapper for slides -->
+                                            <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <img src="~/Tema/assets/img/portfolio/image1.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img src="~/Tema/assets/img/portfolio/image2.jpg">
+                                                </div>
+                                                <div class="item">
+                                                    <img src="~/Tema/assets/img/portfolio/image3.jpg">
+                                                </div>
+                                            </div>
+                                            <!-- Controls -->
+                                            <a class="left carousel-control" href="#carousel-example-1" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                            </a>
+                                            <a class="right carousel-control" href="#carousel-example-1" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                        <!-- End Carousel -->
+                                    </div>
+                                </div>
+                                <hr class="margin-vert-40">
+                                <!-- Meet the Team -->
+                                <h2 class="margin-vert-20">Yönetici Grubumuz</h2>
+                                <div class="row margin-bottom-30">
+                                    <!-- Person Details -->
+                                    @Html.Action("Yonetici","Restoran")
+                                    <!-- //Portfolio Item// -->
+                                </div>
+                                <hr class="margin-vert-60">
+                                
+                                <h2>Memnunyet Durumumuz</h2>
+                                @Html.Action("Memnunyet","Restoran")
+                                <!-- End Our Skills -->
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+

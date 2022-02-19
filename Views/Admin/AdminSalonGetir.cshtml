@@ -1,0 +1,36 @@
+﻿@model TokatRestoran.Models.Entity.TBLSalon
+@{
+    ViewBag.Title = "AdminSalonGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+
+@using (Html.BeginForm("AdminSalonGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <h4>Dügün Salon Panelini Güncelleme</h4>
+        <br />
+        Başlık
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red" })*@
+        <br />
+        Alt Başlık
+        @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.CariSoyad, "", new { @style = "color:red" })*@
+
+        <br />
+        Açıklama
+        @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.CariTel, "", new { @style = "color:red" })*@
+
+        <br />
+        Resim
+        @Html.TextBoxFor(x => x.Resim, new { @class = "form-control" })
+        <br />
+
+        @Html.HiddenFor(x => x.id)
+        <br />
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

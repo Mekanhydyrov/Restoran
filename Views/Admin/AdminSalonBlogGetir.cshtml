@@ -1,0 +1,40 @@
+﻿@model TokatRestoran.Models.Entity.TBLSalonBlog
+@{
+    ViewBag.Title = "AdminSalonBlogGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Düğün Salon Bilgi Güncelle</h3>
+
+@using (Html.BeginForm("AdminSalonBlogGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>BLOG BAŞLIK</b></label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>BLOG İÇERİK</b></label>
+        @Html.TextAreaFor(x => x.Aciklama,5,0, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>RESİM</b></label>
+        @Html.TextBoxFor(x => x.Resim, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>TARİH</b></label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    </div>
+    <br />
+   
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Blog Güncelle</button>
+    </div>
+
+}

@@ -1,0 +1,33 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLKafe>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+<h4>Kafe & Restoran Bilgileri</h4>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID:</th>
+            <th>Başlık:</th>
+            <th>Alt Başlık:</th>
+            <th>Açıklama:</th>
+            <th>Resim:</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.id</td>
+                <td>@x.Baslik</td>
+                <td>@x.AltBaslik</td>
+                <td>@x.Aciklama</td>
+                <td>@x.Resim</td>
+
+                <td><a href="~/Admin/AdminKafeGetir/@x.id" class="btn btn-info">Detay</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+

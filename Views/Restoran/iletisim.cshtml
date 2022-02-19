@@ -1,0 +1,101 @@
+﻿@model TokatRestoran.Models.Entity.TBLiletisim
+@{
+    ViewBag.Title = "iletisim";
+    Layout = "~/Views/Shared/Restoran_Laout.cshtml";
+}
+
+<body>
+    <div id="body_bg">
+
+        <div class="primary-container-group">
+            <!-- Background -->
+            <div class="primary-container-background">
+                <div class="primary-container"></div>
+                <div class="clearfix"></div>
+            </div>
+            <!--End Background -->
+            <div class="primary-container">
+
+                <div class="container">
+                    <!-- === END HEADER === -->
+                    <!-- === BEGIN CONTENT === -->
+                    <div class="row margin-vert-30">
+                        <!-- Main Column -->
+                        <div class="col-md-9">
+                            <!-- Main Content -->
+                            <div class="headline">
+                                <h2>Bizimle İletişime Geçiniz!</h2>
+                            </div>
+                            @Html.Action("iletisimAdres", "Restoran")
+                            <br>
+                            <!-- Contact Form -->
+
+                            <form method="post">
+
+                                <label>Ad Soyad</label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" name="AdSoyad" required="" type="text">
+                                    </div>
+                                </div>
+                                <label>
+                                    Mail
+                                    <span class="color-red">*</span>
+                                </label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" name="Mail" required="" type="email">
+                                    </div>
+                                </div>
+                                <label>Mesajınız</label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-8 col-md-offset-0">
+                                        <textarea rows="8" required="" name="Mesaj" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <p>
+                                    <button type="submit" class="btn btn-primary">Mesajı Gönder</button>
+                                </p>
+
+                            </form>
+                            <!-- End Contact Form -->
+                            <!-- End Main Content -->
+                        </div>
+                        <!-- End Main Column -->
+                        <!-- Side Column -->
+                        <div class="col-md-3">
+                            <!-- Recent Posts -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">İletişim Bilgilerimiz</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @Html.Action("iletisimAcikAdres", "Restoran")
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            
+                                        </li>
+                                        <li>
+                                            
+                                        </li>
+                                        
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <!-- End recent Posts -->
+                            <!-- About -->
+                            <!-- End About -->
+                        </div>
+                        <!-- End Side Column -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<!-- === END FOOTER === -->

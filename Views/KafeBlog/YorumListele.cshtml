@@ -1,0 +1,26 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLYorum>
+
+<div class="blog-author panel panel-default margin-bottom-30">
+
+    @foreach (var x in Model)
+    {
+        <div class="panel-heading">
+            <h3>About the Author</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <img class="pull-left" src="~/Tema/assets/img/profiles/avatar.png" alt="image1">
+                </div>
+                <div class="col-md-10">
+                    <label>@x.AdSoyad</label>
+                    <p>
+                        @x.Mesaj
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

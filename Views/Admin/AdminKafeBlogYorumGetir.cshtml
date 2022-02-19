@@ -1,0 +1,36 @@
+﻿@model TokatRestoran.Models.Entity.TBLYorum
+@{
+    ViewBag.Title = "AdminKafeBlogYorumGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h2>AdminKafe BlogYorum Getir</h2>
+
+@using (Html.BeginForm("AdminKafeBlogYorumGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>AD SOYAD</b></label>
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>MAİL</b></label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>MESAJ</b></label>
+        @Html.TextAreaFor(x => x.Mesaj, new { @class = "form-control" })
+    </div>
+    <br />
+    
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Kafe Yorum Güncelle</button>
+    </div>
+
+}
+

@@ -1,0 +1,35 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLYonetici>
+
+@foreach (var x in Model)
+{
+    <div class="col-sm-3 person-details">
+        <figure>
+
+            <img src="@x.Resim" alt="image1">
+            <figcaption>
+                <h3>
+                    @x.AdSoyad
+                </h3>
+                <span>@x.Bilgi</span>
+            </figcaption>
+            <ul class="list-inline person-details-icons">
+                <li>
+                    <a href="mailto:@x.Mail">
+                        <i class="fa-lg fa-envelope-o"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="@x.instagram">
+                        <i class="fa-lg fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="@x.Facebook">
+                        <i class="fa-lg fa-facebook"></i>
+                    </a>
+                </li>
+            </ul>
+        </figure>
+    </div>
+}

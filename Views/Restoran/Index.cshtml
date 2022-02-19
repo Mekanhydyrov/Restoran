@@ -1,0 +1,104 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLKafe>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Restoran_Laout.cshtml";
+}
+
+<div class="container no-padding">
+    <!-- === END HEADER === -->
+    <!-- === BEGIN CONTENT === -->
+    <div class="row">
+        <!-- Carousel Slideshow -->
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <!-- Carousel Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example" data-slide-to="1"></li>
+                <li data-target="#carousel-example" data-slide-to="2"></li>
+            </ol>
+            <!-- End Carousel Indicators -->
+            <!-- Carousel Images -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/Tema/assets/img/slideshow/slide1.jpg">
+                </div>
+                <div class="item">
+                    <img src="~/Tema/assets/img/slideshow/slide2.jpg">
+                </div>
+                <div class="item">
+                    <img src="~/Tema/assets/img/slideshow/slide3.jpg">
+                </div>
+            </div>
+            <!-- End Carousel Images -->
+            <!-- Carousel Controls -->
+            <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+            <!-- End Carousel Controls -->
+        </div>
+        <!-- End Carousel Slideshow -->
+        <!-- Tabs -->
+        <div class="tabs-dark" style="padding:0;">
+            <!-- Tab Panes -->
+            <!-- End Tab Panes -->
+        </div>
+        <!-- End Tabs -->
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <!-- Main Article -->
+        <div class="col-md-12 margin-top-30">
+
+            @foreach (var x in Model)
+            {
+                <h2 class="item-title">
+                   @x.AltBaslik
+                </h2>
+                <p>
+                    <img class="animate fadeInRight" style="float: right;" src="@x.Resim" alt="responsive screens">
+                   @x.Aciklama
+                </p>
+                
+            }
+
+        </div>
+        <div class="clearfix"></div>
+        <!-- End Main Article -->
+    </div>
+</div>
+<div class="container no-padding gridgallery">
+    <!-- Portfolio Header Text -->
+    <div class="row">
+        <div class="col-md-12 padding-vert-30">
+            <h2 class="subtitle text-center">Defining Style for the Joomla Based Website of Today</h2>
+            <h3 class="subtitle text-center">Fiant tation qui fiant lius nisl. Est nam eros videntur eros at.</h3>
+        </div>
+    </div>
+    <!-- End Portfolio Header Text -->
+    <!-- Portfolio Images -->
+    <div class="portfolio-group">
+        <!-- Portfolio Item -->
+       @Html.Action("KafeAltBlog","Restoran")
+        <div class="clearfix"></div>
+    </div>
+    <!-- End Portfolio Images -->
+    <!-- Portfolio Footer Text -->
+    <div class="row">
+        <div class="col-12-md">
+            <p class="text-center padding-bottom-30" style="max-width:690px; margin:0 auto;">
+                Mirum est notare quam littera gothica, quam nunc putamus. Cras non sem sem, at eleifend mi. Vivamus sit amet ante est, sit amet rutrum augue. Cras non sem sem, at eleifend mi. Nam liber tempor cum soluta nobis eleifend
+                option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+            </p>
+        </div>
+    </div>
+    <!-- End Portfolio Footer Text -->
+    <!-- === END CONTENT === -->
+    <!-- === BEGIN FOOTER === -->
+</div>
+
+

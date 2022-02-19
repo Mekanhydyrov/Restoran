@@ -1,0 +1,26 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLYorum>
+
+
+<div class="recent-posts">
+    <h3>Son Yorumlar</h3>
+    @foreach (var x in Model)
+    {
+        <ul class="posts-list margin-top-10">
+            <li>
+                <div class="recent-post">
+                    <a href="">
+                        <img class="pull-left" src="~/Tema/assets/img/profiles/avatarYorum.png" alt="thumb1">
+                    </a>
+                    <a href="#" class="posts-list-title">@x.AdSoyad</a>
+                    <br>
+                    <span class="recent-post-date">
+                        July 30, 2013
+                    </span>
+                </div>
+                <div class="clearfix"></div>
+            </li>                 
+        </ul>
+    }
+
+</div>

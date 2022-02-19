@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KafeVTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLAdmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAd" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="70" />
+          <Property Name="Durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="TBLAdres">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="150" />
+          <Property Name="AcikAdres" Type="varchar" MaxLength="900" />
+        </EntityType>
+        <EntityType Name="TBLBlog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="300" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="Resim" Type="varchar" MaxLength="500" />
+          <Property Name="Gun" Type="varchar" MaxLength="5" />
+          <Property Name="Ay" Type="varchar" MaxLength="20" />
+          <Property Name="Durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="TBLHakkimizda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="KafeAciklama" Type="varchar(max)" />
+          <Property Name="DugunAciklama" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLiletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="90" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Mesaj" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLKafe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="AltBaslik" Type="varchar" MaxLength="160" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="Resim" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBLSalon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="AltBaslik" Type="varchar" MaxLength="250" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="Resim" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBLSalonBlog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="Resim" Type="varchar" MaxLength="500" />
+          <Property Name="Tarih" Type="varchar" MaxLength="50" />
+          <Property Name="Durum" Type="bit" />
+        </EntityType>
+        <EntityType Name="TBLSalonYorum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="70" />
+          <Property Name="Mail" Type="varchar" MaxLength="70" />
+          <Property Name="Yorum" Type="varchar(max)" />
+          <Property Name="SalonBlogid" Type="int" />
+        </EntityType>
+        <EntityType Name="TBLYetenek">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YetenekAd" Type="varchar" MaxLength="90" />
+          <Property Name="Derece" Type="tinyint" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="5000" />
+        </EntityType>
+        <EntityType Name="TBLYonetici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="90" />
+          <Property Name="Bilgi" Type="varchar" MaxLength="150" />
+          <Property Name="Mail" Type="varchar" MaxLength="90" />
+          <Property Name="Facebook" Type="varchar" MaxLength="250" />
+          <Property Name="instagram" Type="varchar" MaxLength="250" />
+          <Property Name="Resim" Type="varchar" MaxLength="5000" />
+        </EntityType>
+        <EntityType Name="TBLYorum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="60" />
+          <Property Name="Mail" Type="varchar" MaxLength="70" />
+          <Property Name="Mesaj" Type="varchar(max)" />
+          <Property Name="Blogid" Type="int" />
+        </EntityType>
+        <Association Name="FK_TBLSalonYorum_TBLSalonBlog">
+          <End Role="TBLSalonBlog" Type="Self.TBLSalonBlog" Multiplicity="0..1" />
+          <End Role="TBLSalonYorum" Type="Self.TBLSalonYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLSalonBlog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLSalonYorum">
+              <PropertyRef Name="SalonBlogid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLYorum_TBLBlog">
+          <End Role="TBLBlog" Type="Self.TBLBlog" Multiplicity="0..1" />
+          <End Role="TBLYorum" Type="Self.TBLYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLBlog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLYorum">
+              <PropertyRef Name="Blogid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KafeVTModelStoreContainer">
+          <EntitySet Name="TBLAdmin" EntityType="Self.TBLAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLAdres" EntityType="Self.TBLAdres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLBlog" EntityType="Self.TBLBlog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLHakkimizda" EntityType="Self.TBLHakkimizda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLiletisim" EntityType="Self.TBLiletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLKafe" EntityType="Self.TBLKafe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLSalon" EntityType="Self.TBLSalon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLSalonBlog" EntityType="Self.TBLSalonBlog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLSalonYorum" EntityType="Self.TBLSalonYorum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLYetenek" EntityType="Self.TBLYetenek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLYonetici" EntityType="Self.TBLYonetici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLYorum" EntityType="Self.TBLYorum" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBLSalonYorum_TBLSalonBlog" Association="Self.FK_TBLSalonYorum_TBLSalonBlog">
+            <End Role="TBLSalonBlog" EntitySet="TBLSalonBlog" />
+            <End Role="TBLSalonYorum" EntitySet="TBLSalonYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLYorum_TBLBlog" Association="Self.FK_TBLYorum_TBLBlog">
+            <End Role="TBLBlog" EntitySet="TBLBlog" />
+            <End Role="TBLYorum" EntitySet="TBLYorum" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KafeVTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBLAdmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Durum" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TBLAdres">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AcikAdres" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLBlog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Gun" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Ay" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Durum" Type="Boolean" />
+          <NavigationProperty Name="TBLYorum" Relationship="Self.FK_TBLYorum_TBLBlog" FromRole="TBLBlog" ToRole="TBLYorum" />
+        </EntityType>
+        <EntityType Name="TBLHakkimizda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KafeAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DugunAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLiletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLKafe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaslik" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLSalon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLSalonBlog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Durum" Type="Boolean" />
+          <NavigationProperty Name="TBLSalonYorum" Relationship="Self.FK_TBLSalonYorum_TBLSalonBlog" FromRole="TBLSalonBlog" ToRole="TBLSalonYorum" />
+        </EntityType>
+        <EntityType Name="TBLSalonYorum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Yorum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalonBlogid" Type="Int32" />
+          <NavigationProperty Name="TBLSalonBlog" Relationship="Self.FK_TBLSalonYorum_TBLSalonBlog" FromRole="TBLSalonYorum" ToRole="TBLSalonBlog" />
+        </EntityType>
+        <EntityType Name="TBLYetenek">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YetenekAd" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="Derece" Type="Byte" />
+          <Property Name="Aciklama" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLYonetici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="Bilgi" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="Facebook" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="instagram" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Resim" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLYorum">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Blogid" Type="Int32" />
+          <NavigationProperty Name="TBLBlog" Relationship="Self.FK_TBLYorum_TBLBlog" FromRole="TBLYorum" ToRole="TBLBlog" />
+        </EntityType>
+        <Association Name="FK_TBLYorum_TBLBlog">
+          <End Role="TBLBlog" Type="Self.TBLBlog" Multiplicity="0..1" />
+          <End Role="TBLYorum" Type="Self.TBLYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLBlog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLYorum">
+              <PropertyRef Name="Blogid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLSalonYorum_TBLSalonBlog">
+          <End Role="TBLSalonBlog" Type="Self.TBLSalonBlog" Multiplicity="0..1" />
+          <End Role="TBLSalonYorum" Type="Self.TBLSalonYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLSalonBlog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLSalonYorum">
+              <PropertyRef Name="SalonBlogid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KafeVTEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLAdmin" EntityType="Self.TBLAdmin" />
+          <EntitySet Name="TBLAdres" EntityType="Self.TBLAdres" />
+          <EntitySet Name="TBLBlog" EntityType="Self.TBLBlog" />
+          <EntitySet Name="TBLHakkimizda" EntityType="Self.TBLHakkimizda" />
+          <EntitySet Name="TBLiletisim" EntityType="Self.TBLiletisim" />
+          <EntitySet Name="TBLKafe" EntityType="Self.TBLKafe" />
+          <EntitySet Name="TBLSalon" EntityType="Self.TBLSalon" />
+          <EntitySet Name="TBLSalonBlog" EntityType="Self.TBLSalonBlog" />
+          <EntitySet Name="TBLSalonYorum" EntityType="Self.TBLSalonYorum" />
+          <EntitySet Name="TBLYetenek" EntityType="Self.TBLYetenek" />
+          <EntitySet Name="TBLYonetici" EntityType="Self.TBLYonetici" />
+          <EntitySet Name="TBLYorum" EntityType="Self.TBLYorum" />
+          <AssociationSet Name="FK_TBLYorum_TBLBlog" Association="Self.FK_TBLYorum_TBLBlog">
+            <End Role="TBLBlog" EntitySet="TBLBlog" />
+            <End Role="TBLYorum" EntitySet="TBLYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLSalonYorum_TBLSalonBlog" Association="Self.FK_TBLSalonYorum_TBLSalonBlog">
+            <End Role="TBLSalonBlog" EntitySet="TBLSalonBlog" />
+            <End Role="TBLSalonYorum" EntitySet="TBLSalonYorum" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KafeVTModelStoreContainer" CdmEntityContainer="KafeVTEntities1">
+          <EntitySetMapping Name="TBLAdmin">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLAdmin">
+              <MappingFragment StoreEntitySet="TBLAdmin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KullaniciAd" ColumnName="KullaniciAd" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLAdres">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLAdres">
+              <MappingFragment StoreEntitySet="TBLAdres">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="AcikAdres" ColumnName="AcikAdres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLBlog">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLBlog">
+              <MappingFragment StoreEntitySet="TBLBlog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Gun" ColumnName="Gun" />
+                <ScalarProperty Name="Ay" ColumnName="Ay" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLHakkimizda">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLHakkimizda">
+              <MappingFragment StoreEntitySet="TBLHakkimizda">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="KafeAciklama" ColumnName="KafeAciklama" />
+                <ScalarProperty Name="DugunAciklama" ColumnName="DugunAciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLiletisim">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLiletisim">
+              <MappingFragment StoreEntitySet="TBLiletisim">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLKafe">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLKafe">
+              <MappingFragment StoreEntitySet="TBLKafe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AltBaslik" ColumnName="AltBaslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLSalon">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLSalon">
+              <MappingFragment StoreEntitySet="TBLSalon">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AltBaslik" ColumnName="AltBaslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLSalonBlog">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLSalonBlog">
+              <MappingFragment StoreEntitySet="TBLSalonBlog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLSalonYorum">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLSalonYorum">
+              <MappingFragment StoreEntitySet="TBLSalonYorum">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Yorum" ColumnName="Yorum" />
+                <ScalarProperty Name="SalonBlogid" ColumnName="SalonBlogid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLYetenek">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLYetenek">
+              <MappingFragment StoreEntitySet="TBLYetenek">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="YetenekAd" ColumnName="YetenekAd" />
+                <ScalarProperty Name="Derece" ColumnName="Derece" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLYonetici">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLYonetici">
+              <MappingFragment StoreEntitySet="TBLYonetici">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Bilgi" ColumnName="Bilgi" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="instagram" ColumnName="instagram" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLYorum">
+            <EntityTypeMapping TypeName="KafeVTModel.TBLYorum">
+              <MappingFragment StoreEntitySet="TBLYorum">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Blogid" ColumnName="Blogid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

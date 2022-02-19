@@ -1,0 +1,30 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLAdres>
+@{
+    ViewBag.Title = "AdminAdres";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Adres Paneli</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AÇIKLAMA</th>
+        <th>TELEFON</th>
+        <th>MAİL</th>
+        <th>AÇIK ADRES</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.Aciklama</td>
+            <td>@x.Telefon</td>
+            <td>@x.Mail</td>
+            <td>@x.AcikAdres</td>
+            <td><a href="~/Admin/AdminAdresGetir/@x.id" class="btn btn-info">Güncelle</a></td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,31 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLYetenek> 
+@{
+    ViewBag.Title = "HakkimdaMemnunyet";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Memnunyet Bilgileri</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID:</th>
+        <th>Memnunyet Ad</th>
+        <th>Derece</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.YetenekAd</td>
+            <td>@x.Derece</td>
+            <td>@x.Aciklama</td>
+            <td><a href="~/Admin/MemnunyetSil/@x.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="~/Admin/MemnunyetGetir/@x.id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="~/Admin/MemnunyetEkle/" class="btn btn-info">Yeni Memnunyet</a>

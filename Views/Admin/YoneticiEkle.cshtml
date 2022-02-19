@@ -1,0 +1,47 @@
+﻿@model TokatRestoran.Models.Entity.TBLYonetici
+@{
+    ViewBag.Title = "YoneticiEkle";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Yonetici Ekle</h3>
+
+<div id="div-boyut">
+    <form method="post">
+
+        <div>
+            <label><b>AD SOYAD</b></label>
+            <input type="text" name="AdSoyad" required="" maxlength="85" class="form-control"/>
+        </div>
+        <br />
+        <div>
+            <label><b>BİLĞİ</b></label>
+            <input type="text" name="Bilgi" required="" maxlength="145" class="form-control"/>
+        </div>
+        <br />
+        <div>
+            <label><b>MAİL</b></label>
+            <input type="text" name="Mail" required="" maxlength="85" class="form-control"/>
+        </div>
+        <br />
+        <div>
+            <label><b>FECABOOK</b></label>
+            <input type="text" name="Facebook" required="" maxlength="250"class="form-control" />
+        </div>
+        <br />
+        <div>
+            <label><b>İNSTAGRAM</b></label>
+            <input type="text" name="instagram" required="" maxlength="250" class="form-control"/>
+        </div>
+        <br />
+        <div>
+            <label><b>RESİM</b></label>
+            <input type="text" name="Resim" required="" maxlength="5000" class="form-control"/>
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-success">Yönetici Ekle</button>
+        </div>
+        <br />
+    </form>
+</div>

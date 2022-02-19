@@ -1,0 +1,28 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLYetenek>
+
+
+@foreach (var x in Model)
+{
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="progress-label">
+                @x.YetenekAd
+                <span class="pull-right">@x.Derece%</span>
+            </h3>
+            <div class="progress progress-sm">
+                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width:@x.Derece%">
+                </div>
+            </div>
+        </div>
+            <!-- Accordion -->
+            <div class="col-md-6">
+                <p>
+                    @x.Aciklama
+                </p>
+            </div>
+            <!-- End Accordion -->
+
+    </div>
+}
+

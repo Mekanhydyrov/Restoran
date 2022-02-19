@@ -1,0 +1,33 @@
+﻿@model TokatRestoran.Models.Entity.TBLYetenek
+@{
+    ViewBag.Title = "MemnunyetGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Memnunyet Güncelleme Paneli</h3>
+
+@using (Html.BeginForm("MemnunyetGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>YETENEK ADI</b></label>
+        @Html.TextBoxFor(x => x.YetenekAd, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>YETENEK DERECE</b></label>
+        @Html.TextBoxFor(x => x.Derece, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>AÇIKLAMA</b></label>
+        @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Memnunyet Güncelle</button>
+    </div>
+
+}

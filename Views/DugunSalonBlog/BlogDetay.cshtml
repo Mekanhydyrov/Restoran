@@ -1,0 +1,89 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLSalonBlog>
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/Restoran_Laout.cshtml";
+}
+
+<body>
+    <div id="body_bg">
+
+        <div class="primary-container-group">
+            <!-- Background -->
+            <div class="primary-container-background">
+                <div class="primary-container"></div>
+                <div class="clearfix"></div>
+            </div>
+            <!--End Background -->
+            <div class="primary-container">
+                <div id="container_hornav" class="container no-padding">
+                    
+                </div>
+                <div class="container">
+                    <!-- === END HEADER === -->
+                    <!-- === BEGIN CONTENT === -->
+                    <div class="row margin-vert-30">
+                        <!-- Main Column -->
+                        <div class="col-md-9">
+                            <div class="blog-post">
+                                @foreach (var x in Model)
+                                {
+                                    <div class="blog-item-header">
+                                        @*<div class="blog-post-date pull-left">
+                                            
+                                            <span class="month">Dec</span>
+                                        </div>*@
+                                        <h2>
+                                            <a href="#">
+                                                @x.Baslik
+                                            </a>
+                                        </h2>
+
+                                    </div>
+                                    <div class="blog-item">
+                                        <div class="clearfix"></div>
+                                        <div class="blog-post-body row margin-top-15">
+                                            <div class="col-md-5">
+                                                <img class="pull-left" src="@x.Resim" alt="image1">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <span class="day">@x.Tarih</span>
+                                                <p>
+                                                    @x.Aciklama
+                                                </p>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="blog-item-footer">
+                                            <!-- About the Author -->
+                                            @Html.Action("YorumListele", "DugunSalonBlog")
+                                            <!-- End About the Author -->
+                                            <!-- Comments -->
+                                            <div class="blog-recent-comments panel panel-default margin-bottom-30">
+                                                <div class="panel-heading">
+                                                    <h3>Yorum Yap</h3>
+                                                </div>
+                                                @Html.Action("YorumYap", "DugunSalonBlog")
+                                            </div>
+                                            <!-- End Comments -->
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <!-- End Blog Post -->
+                        </div>
+                        <div class="col-md-3 margin-top-30">
+                            @Html.Action("SonYorumlar", "DugunSalonBlog")
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+

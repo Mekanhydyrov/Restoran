@@ -1,0 +1,144 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Admin Panel</title>
+    <link href="~/AdminTema/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/AdminTema/sidebar/bootstrap-3/style4.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><a href="~/Restoran/Index/">Siteye Git</a></h3>
+                <strong>SG</strong>
+            </div>
+
+
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="~/Admin/Index/">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Kafe & Restorant
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-duplicate"></i>
+                        Kafe Blog
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a href="~/Admin/AdminBlog/">Kafe Blog</a></li>
+                        <li><a href="~/Admin/AdminKafeBlogYorum/">Kafe Yorum</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+
+                    <a href="#HakkimdaSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-duplicate"></i>
+                        Hakkında
+                    </a>
+                    <ul class="collapse list-unstyled" id="HakkimdaSubmenu">
+                        <li><a href="~/Admin/AdminHakkimizda/">Hakkında Yazı</a></li>
+                        <li><a href="~/Admin/HakkimizdaYonetici/">Yönetici</a></li>
+                        <li><a href="~/Admin/HakkimdaMemnunyet/">Memnuniyet Durumu</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="~/Admin/AdminSalon/">
+                        <i class="glyphicon glyphicon-link"></i>
+                        Dügün Salonu
+                    </a>
+                </li>
+                <li>
+
+                    <a href="#Submenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-duplicate"></i>
+                        Düğün Salon Blog
+                    </a>
+                    <ul class="collapse list-unstyled" id="Submenu">
+                        <li><a href="~/Admin/AdminSalonBlog/">Düğün Salon Blog</a></li>
+                        <li><a href="~/Admin/AdminSalonYorum/">Düğün Salon Yorum</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="~/Admin/Adminiletisim/">
+                        <i class="glyphicon glyphicon-send"></i>
+                        İletişim
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Admin/AdminAdres/">
+                        <i class="glyphicon glyphicon-send"></i>
+                        Adres Bilği
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Admin/LoginListele/">
+                        <i class="glyphicon glyphicon-send"></i>
+                        Admin İşlem
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>Menü</span>
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    </div>
+                </div>
+            </nav>
+            @RenderBody()
+        </div>
+
+    </div>
+
+
+
+
+    <script src="~/AdminTema/jquery-1.12.0.min.js"></script>
+
+    <script src="~/AdminTema/js-bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });</script>
+</body>
+</html>
+

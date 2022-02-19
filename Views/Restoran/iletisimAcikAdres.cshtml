@@ -1,0 +1,14 @@
+﻿
+@using TokatRestoran.Models.Entity
+@model List<TBLAdres>
+
+@foreach (var x in Model)
+{
+    <p>
+        @x.AcikAdres
+    </p>
+
+    <i class="fa-phone color-primary"></i>@x.Telefon
+
+    <i class="fa-envelope color-primary"></i>@x.Mail
+}

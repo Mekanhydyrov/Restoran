@@ -1,0 +1,14 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLSalonBlog>
+
+    @foreach (var h in Model)
+    {
+
+        <img style="float: left; margin-right: 25px; margin-bottom: 10px;" src="@h.Resim"  height="165px" width="300px"; alt="filler image" />
+        <h3>@h.Baslik</h3>
+        <p>
+            @h.Aciklama
+        </p>
+    }
+
+

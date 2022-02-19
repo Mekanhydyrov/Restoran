@@ -1,0 +1,35 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLSalonYorum>
+@{
+    ViewBag.Title = "AdminSalonYorum";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Düğün Salon Yorum Listesi</h3>
+
+<div id="div-boyut">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Ad Soyad</th>
+            <th>Mail</th>
+            <th>Yorum</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.id</td>
+                <td>@x.AdSoyad</td>
+                <td>@x.Mail</td>
+                <td>@x.Yorum</td>
+
+                <td><a href="~/Admin/AdminSalonYorumSil/@x.id" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Admin/AdminSalonYorumGetir/@x.id" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+

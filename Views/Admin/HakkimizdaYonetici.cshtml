@@ -1,0 +1,31 @@
+﻿@using TokatRestoran.Models.Entity
+@model List<TBLYonetici>
+@{
+    ViewBag.Title = "HakkimizdaYonetici";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Yonetici Bilgileri</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad Soyad</th>
+        <th>Bilği</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.AdSoyad</td>
+            <td>@x.Bilgi</td>
+            <td><a href="~/Admin/YoneticiSil/@x.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="~/Admin/HakkimizdaYoneticiGetir/@x.id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<div>
+    <a href="~/Admin/YoneticiEkle/" class="btn btn-info">Yeni Yönetici</a>
+</div>

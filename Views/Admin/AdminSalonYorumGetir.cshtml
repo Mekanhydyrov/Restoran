@@ -1,0 +1,33 @@
+﻿@model TokatRestoran.Models.Entity.TBLSalonYorum
+@{
+    ViewBag.Title = "AdminSalonYorumGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h2>Admin Salon Yorum Güncelle</h2>
+
+@using (Html.BeginForm("AdminSalonYorumGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>Yorum Yazan</b></label>
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Yorum Yazan Mail</b></label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Yorum İçerik</b></label>
+        @Html.TextAreaFor(x => x.Yorum,5,0, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <div>
+        <button class="btn btn-primary">Yorum Güncelle</button>
+    </div>
+
+}

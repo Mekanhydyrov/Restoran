@@ -1,0 +1,34 @@
+﻿@model TokatRestoran.Models.Entity.TBLHakkimizda
+@{
+    ViewBag.Title = "AdminHakkimdaGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+@using (Html.BeginForm("AdminHakkindaGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>BAŞLIK</b></label>
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>KAFE HAKKINDA</b></label>
+        @Html.TextAreaFor(x => x.KafeAciklama,5,0, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>DÜGÜN HAKKINDA</b></label>
+        @Html.TextAreaFor(x => x.DugunAciklama,5,0, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Hakkımızda Güncelle</button>
+    </div>
+
+}
+
+

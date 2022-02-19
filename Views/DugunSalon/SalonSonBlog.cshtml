@@ -1,0 +1,23 @@
+﻿
+@using TokatRestoran.Models.Entity
+@model List<TBLSalonBlog>
+
+@foreach (var x in Model)
+{
+    <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
+        <div class="image-hover">
+
+            <a href="~/DugunSalonBlog/BlogDetay/@x.id">
+                <figure>
+                    <img src="@x.Resim" alt="image1">
+                    <figcaption>
+                        <h3>@x.Baslik</h3>
+                        <span>@x.Aciklama</span>
+                    </figcaption>
+                </figure>
+            </a>
+
+
+        </div>
+    </div>
+}

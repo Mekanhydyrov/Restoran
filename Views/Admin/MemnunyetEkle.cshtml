@@ -1,0 +1,31 @@
+﻿@model TokatRestoran.Models.Entity.TBLYetenek
+@{
+    ViewBag.Title = "MemnunyetEkle";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Memnunyet Ekleme Paneli</h3>
+
+<div id="div-boyut">
+    <form method="post">
+        <div>
+            <label><b>YETENEK AD</b></label>
+            <input type="text" name="YetenekAd" required="" maxlength="85" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <label><b>MEMNUNYET DERECESİ</b></label>
+            <input type="text" name="Derece" required="" maxlength="2" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <label><b>AÇIKLAMA</b></label>
+            <input type="text" name="Aciklama" required="" maxlength="5000" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-primary">Memnunyet Ekle</button>
+        </div>
+        <br />
+    </form>
+</div>

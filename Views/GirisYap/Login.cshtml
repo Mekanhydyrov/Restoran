@@ -1,0 +1,140 @@
+﻿@model TokatRestoran.Models.Entity.TBLAdmin
+@{
+    Layout = null;
+}
+
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <title>Yeşilpark Kafe & Kafe Restorant</title>
+    <!-- Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Favicon -->
+    <link href="~/Tema/favicon.ico" rel="shortcut icon">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="~/Tema/assets/css/bootstrap.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/Tema/assets/css/animate.css">
+    <link rel="stylesheet" href="~/Tema/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="~/Tema/assets/css/nexus.css">
+    <link rel="stylesheet" href="~/Tema/assets/css/responsive.css">
+    <link rel="stylesheet" href="~/Tema/assets/css/custom.css">
+    <!-- Google Fonts-->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+</head>
+<body>
+    <div id="body_bg">
+        <div id="container_header" class="container">
+            <div id="header" class="row">
+                <div class="col-md-12 margin-top-15">
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="primary-container-group">
+            <!-- Background -->
+            <div class="primary-container-background">
+                <div class="primary-container"></div>
+                <div class="clearfix"></div>
+            </div>
+            <!--End Background -->
+            <div class="primary-container">
+                <div id="container_hornav" class="container no-padding">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <h3>
+                            <a href="#">
+                                Tokat Yeşil Park Kafe & Retorant
+                            </a>
+                        </h3>
+                    </div>
+                    <!-- End Logo -->
+                    <!-- Slogan -->
+                    <!-- End Slogan -->
+                    <!-- Top Menu -->
+                    <div class="row">
+                        <div class="hornav-block">
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- End Top Menu -->
+                </div>
+                <div class="container">
+                    <!-- === END HEADER === -->
+                    <!-- === BEGIN CONTENT === -->
+                    <div class="container">
+                        <div class="row margin-vert-30">
+                            <!-- Login Box -->
+                            @using (Html.BeginForm("Login", "GirisYap", FormMethod.Post))
+                            {
+                                <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+                                    <form class="login-page">
+                                        <div class="login-header margin-bottom-30">
+                                            <h2>Giriş Yapın!</h2>
+                                        </div>
+                                        <div class="input-group margin-bottom-20">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <input placeholder="Kullanici Mail" name="Mail" class="form-control" type="text">
+                                        </div>
+                                        <div class="input-group margin-bottom-20">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-lock"></i>
+                                            </span>
+                                            <input placeholder="Şifre" name="Sifre" class="form-control" type="password">
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <button class="btn btn-primary pull-right" type="submit">Giriş Yap</button>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <h4>Şifremi Unuttum</h4>
+                                        <p>
+                                            <a class="color-green" href="mailto:kisakodlar@gmail.com">Buradan</a>Şifre İsteyiniz.
+                                        </p>
+                                    </form>
+                                </div>
+                            }
+                            <!-- End Login Box -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container padding-vert-30">
+                    <div class="row">
+                        <div id="copyright">
+                            <p>(c) 2021 Tokat Yeşlipark Kafe & Restorant Düğün Salonu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="~/Tema/text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="~/Tema/text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="~/Tema/text/javascript" src="assets/js/scripts.js"></script>
+    <!-- Isotope - Portfolio Sorting -->
+    <script type="~/Tema/text/javascript" src="assets/js/jquery.isotope.js"></script>
+    <!-- Mobile Menu - Slicknav -->
+    <script type="~/Tema/text/javascript" src="assets/js/jquery.slicknav.js"></script>
+    <!-- Animate on Scroll-->
+    <script type="~/Tema/text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
+    <!-- Modernizr -->
+    <script src="~/Tema/assets/js/modernizr.custom.js" type="text/javascript"></script>
+</body>
+</html>
+

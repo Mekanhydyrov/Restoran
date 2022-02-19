@@ -1,0 +1,50 @@
+﻿
+@model TokatRestoran.Models.Entity.TBLSalonYorum
+
+<ul class="list-group">
+
+    <!-- Comment Form -->
+    <li class="list-group-item">
+        <div class="blog-comment-form">
+            <div class="row margin-top-20">
+                <div class="col-md-12">
+                    <div class="pull-left">
+                        <h3>Sizin Fikriniz Bizim için Önemli</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top-20">
+                <div class="col-md-12">
+                    <form method="post">
+
+                        <label>Ad Soyad</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <input class="form-control" type="hidden" name="SalonBlogid" value="@ViewBag.deger">
+                                <input class="form-control" type="text" placeholder="Ad Soyadınız" name="AdSoyad" required="">
+                            </div>
+                        </div>
+                        <label>
+                            Mail
+                        </label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <input class="form-control" type="text" name="Mail" placeholder="Mail Adresiniz" required="">
+                            </div>
+                        </div>
+                        <label>Yorumunuz</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-11 col-md-offset-0">
+                                <textarea class="form-control" rows="8" name="Yorum" placeholder="Mesajınız..." required=""></textarea>
+                            </div>
+                        </div>
+                        <p>
+                            <button class="btn btn-primary" type="submit"> Yorum Yap</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- End Comment Form -->
+</ul>

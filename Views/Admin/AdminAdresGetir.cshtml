@@ -1,0 +1,38 @@
+﻿@model TokatRestoran.Models.Entity.TBLAdres
+@{
+    ViewBag.Title = "AdminAdresGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Adres Güncelleme Paneli</h3>
+
+@using (Html.BeginForm("AdminAdresGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>AÇIKLAMA</b></label>
+        @Html.TextAreaFor(x => x.Aciklama,5,0, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>TELEFON</b></label>
+        @Html.TextAreaFor(x => x.Telefon, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>MAİL</b></label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>AÇIK ADRES</b></label>
+        @Html.TextAreaFor(x => x.AcikAdres,5,0, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Adres Güncelle</button>
+    </div>
+
+}

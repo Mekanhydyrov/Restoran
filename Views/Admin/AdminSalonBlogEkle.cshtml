@@ -1,0 +1,39 @@
+﻿@model TokatRestoran.Models.Entity.TBLSalonBlog
+@{
+    ViewBag.Title = "AdminSalonBlogEkle";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+
+<h3>Salon Blog Ekleme Paneli</h3>
+
+<div id="div-boyut">
+    <form method="post">
+        <div>
+            <label><b>BLOG BAŞLIK</b></label>
+            <input type="text" name="Baslik" required="" maxlength="48" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <label><b>BLOG İÇERİK</b></label>
+            <textarea name="Aciklama" cols="40" rows="5" required="" class="form-control"></textarea>
+            
+        </div>
+        <br />
+        <div>
+            <label><b>RESİM</b></label>
+            <input type="text" name="Resim" required="" maxlength="500" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <label><b>TARİH</b></label>
+            <input type="text" name="Tarih" required="" maxlength="48" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-primary">Blog Ekle</button>
+        </div>
+        <br />
+    </form>
+</div>
+

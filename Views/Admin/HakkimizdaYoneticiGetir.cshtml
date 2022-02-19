@@ -1,0 +1,48 @@
+﻿@model TokatRestoran.Models.Entity.TBLYonetici
+@{
+    ViewBag.Title = "HakkimizdaYoneticiGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Yonetici Güncelleme</h3>
+
+@using (Html.BeginForm("HakkimizdaYoneticiGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>AD SOYAD</b></label>
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>BİLĞİ</b></label>
+        @Html.TextAreaFor(x => x.Bilgi, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>MAİL</b></label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>FACEBOOK</b></label>
+        @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>İNSTAGRAM</b></label>
+        @Html.TextBoxFor(x => x.instagram, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>RESİM</b></label>
+        @Html.TextBoxFor(x => x.Resim, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Yönetici Güncelle</button>
+    </div>
+
+}

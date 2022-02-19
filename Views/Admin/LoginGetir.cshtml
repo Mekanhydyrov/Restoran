@@ -1,0 +1,35 @@
+﻿@model TokatRestoran.Models.Entity.TBLAdmin
+@{
+    ViewBag.Title = "LoginGetir";
+    Layout = "~/Views/Shared/Admin_Laout.cshtml";
+}
+
+<h3>Admin Güncelleme Sayfası</h3>
+
+@using (Html.BeginForm("LoginGuncelle", "Admin", FormMethod.Post))
+{
+    <div id="div-boyut">
+        <label><b>KULLANICI AD</b></label>
+        @Html.TextBoxFor(x => x.KullaniciAd, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>MAİL</b></label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>ŞİFRE</b></label>
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.HiddenFor(x => x.id)
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Admin Bilgi Güncelle</button>
+    </div>
+
+}
+

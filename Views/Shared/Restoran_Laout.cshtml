@@ -1,0 +1,144 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <title>Yeşil Park Kafe & Restoran</title>
+    <!-- Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="~/Tema/assets/css/bootstrap.css" >
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/Tema/assets/css/animate.css" >
+    <link rel="stylesheet" href="~/Tema/assets/css/font-awesome.css" >
+    <link rel="stylesheet" href="~/Tema/assets/css/nexus.css">
+    <link rel="stylesheet" href="~/Tema/assets/css/responsive.css" >
+    <link rel="stylesheet" href="~/Tema/assets/css/custom.css">
+    <!-- Google Fonts-->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans:300,400" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source Sans Pro:300,400" />
+</head>
+<body>
+    <div id="body_bg">
+        <div id="container_header" class="container">
+            <div id="header" class="row">
+                <div class="col-md-12 margin-top-15">
+                    <!-- Header Social Icons -->
+                    <ul class="social-icons circle pull-right">
+                        <li class="social-rss">
+                            <a href="#" target="_blank" title="RSS"></a>
+                        </li>
+                        <li class="social-twitter">
+                            <a href="#" target="_blank" title="Twitter"></a>
+                        </li>
+                        <li class="social-facebook">
+                            <a href="#" target="_blank" title="Facebook"></a>
+                        </li>
+                        <li class="social-googleplus">
+                            <a href="#" target="_blank" title="GooglePlus"></a>
+                        </li>
+                    </ul>
+                    <!-- End Header Social Icons -->
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="primary-container-group">
+            <!-- Background -->
+            <div class="primary-container-background">
+                <div class="primary-container"></div>
+                <div class="clearfix"></div>
+            </div>
+            <!--End Background -->
+            <div class="primary-container">
+                <div id="container_hornav" class="container no-padding">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="~/Tema/assets/img/logo.png" alt="Logo" />
+                        </a>
+                    </div>
+                    <!-- End Logo -->
+                    <!-- Slogan -->
+                    <!-- End Slogan -->
+                    <!-- Top Menu -->
+                    <div class="row">
+                        <div class="hornav-block">
+                            <div id="hornav" class="pull-right">
+                                <ul id="hornavmenu" class="nav navbar-nav">
+                                    <li>
+                                        <a href="~/Restoran/Index/">Kafe</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/DugunSalon/Index/">Düğün Salonu</a>
+                                    </li>
+                                    <li>
+                                        <span>Etkinlik</span>
+                                        <ul>
+                                            <li>
+                                                <a href="~/KafeBlog/Blog/">Kafe</a>
+                                            </li>
+                                            <li>
+                                                <a href="~/DugunSalonBlog/Blog/">Restoran</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="~/Restoran/Hakkimizda/">Hakkımızda</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Restoran/iletisim/">İletişim</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- End Top Menu -->
+                </div>
+               @RenderBody()
+                <div id="base" class="container padding-vert-30">
+                    @Html.Action("AdresLaut","Restoran")
+                </div>
+                <!-- Footer Menu -->
+                
+                <!-- End Footer Menu -->
+            </div>
+        </div>
+        <div class="container padding-vert-30">
+            <div class="row">
+                <div id="copyright">
+                    <p>(c) 2021 Copyright Yeşilpark</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JS -->
+    <script type="text/javascript" src="~/Tema/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Tema/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Tema/assets/js/scripts.js"></script>
+    <!-- Isotope - Portfolio Sorting -->
+    <script type="text/javascript" src="~/Tema/assets/js/jquery.isotope.js"></script>
+    <!-- Mobile Menu - Slicknav -->
+    <script type="text/javascript" src="~/Tema/assets/js/jquery.slicknav.js"></script>
+    <!-- Animate on Scroll-->
+    <script type="text/javascript" src="~/Tema/assets/js/jquery.visible.js" charset="utf-8"></script>
+    <!-- Modernizr -->
+    <script src="~/Tema/assets/js/modernizr.custom.js" type="text/javascript"></script>
+    <!-- End JS -->
+</body>
+</html>
+<!-- === END FOOTER === -->
